@@ -2,36 +2,9 @@ import { useState } from 'react'
 import './App.css'
 import {Box, Button, Text} from "@chakra-ui/react";
 
-function Numbers (props) {
-  const nums = Array.from(Array(10).keys()).map(
-      number => {
-        return <Button
-            onClick={(e) => {
-              if (props.data !== '0')  props.onClick(props.data + e.target.innerHTML)
-              else props.onClick(e.target.innerHTML)
-            }}
-            key={number} w="40px" h="40px" borderRadius='4px' margin='5px'>
-          {number}
-        </Button>
-      }
-  );
-  return <Box display='flex' flexWrap='wrap' w='70%'> {nums} </Box>
-}
+import Numbers from "./components/Numbers.jsx";
+import CountButton from "./components/CountButton.jsx";
 
-
-function CountButton(props) {
-  const expressions = /\+|\-|\/|\*| /;
-  const lastNumber = props.data[props.data.length - 1]
-  function checkExpressionType () {
-    if (expressions.test(lastNumber)) return
-    props.onClick(props.data + props.expression)
-  }
-  return (
-      <Button m='5px' borderRadius='4px' onClick={checkExpressionType}>
-        {props.expression}
-      </Button>
-  )
-}
 
 
 
