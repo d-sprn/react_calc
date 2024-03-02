@@ -8,7 +8,7 @@ export default function CountButton(props) {
         props.onClick(props.data + props.expression)
     }
     return (
-        <Button m='5px' borderRadius='4px' onClick={checkExpressionType}>
+        <Button bg='lightblue' m='5px' borderRadius='4px' onClick={checkExpressionType}>
             {props.expression}
         </Button>
     )

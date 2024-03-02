@@ -1,11 +1,10 @@
 import { useState } from 'react'
 import './App.css'
-import {Box, Button, Text} from "@chakra-ui/react";
+import {Box, Button, Text, Input} from "@chakra-ui/react";
 
 import Numbers from "./components/Numbers.jsx";
 import CountButton from "./components/CountButton.jsx";
-
-
+import InputCalc from "./components/InputCalc.jsx";
 
 
 function App() {
@@ -19,16 +18,14 @@ function App() {
 
     return (
       <div className="App">
-
-
         <Box display='flex' flexDirection='column' justifyContent='center' alignItems='center' h='100vh'>
           <Box display='flex' gap='10px' flexDirection='column' justifyContent='center' alignItems='center'>
-            <Box display='flex'  justifyContent='space-between' w='200px'>
-              <Text display='flex' justifyContent='start' alignItems='center' bg='gray.50' w='100%' h='38px' px='4px'
-              borderRadius='8px'>
+            <InputCalc />
+            <Box display='flex' borderRadius='8px' justifyContent='space-between' bg='gray.50' w='200px' p='0 5px 0 5px'>
+              <Text display='flex' justifyContent='start' alignItems='center'  w='100%' h='38px' px='4px'>
                 {counts}
               </Text>
-              <Text w='fit-content' h='38px' textColor='tomato'>
+              <Text w='fit-content' h='38px' textColor='tomato' display='flex' justifyContent='flex-end' alignItems='center'>
                 {result}
               </Text>
             </Box>
@@ -44,16 +41,10 @@ function App() {
                 </Button>
               </Box>
             </Box>
-
           </Box>
         </Box>
-
-
       </div>
   )
 }
-
-
-
 
 export default App
